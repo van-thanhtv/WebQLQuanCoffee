@@ -1,0 +1,43 @@
+.menu-wrap {
+    margin-bottom: 60px; }
+.menu-wrap .menu-img {
+    display: block;
+    height: 270px; }
+.cart_quantity_input {
+    color: #696763;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.button_quantity{
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #00dbde;
+    border: 0;
+    outline: none;
+    border-radius: 50%;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+}
+.button_quantity:hover{
+    background-color: green;
+    color: #fff;
+}
+ .input_quantity{
+    display: inline-block;
+    width: 35px;
+     height: 35px;
+    margin: 0px 5px;
+    padding: 3px 6px;
+    border-radius: 1px;
+    border: 0;
+    outline: none;
+}
