@@ -18,7 +18,7 @@ public class MyConfig {
         mailSender.setPort(465);
 
         mailSender.setUsername("Thanhtvph15016@fpt.edu.vn");
-        mailSender.setPassword("ratXyb-4nijco-zymbut");
+        mailSender.setPassword("ratXyb-4nijco-zymbuthanh");
         mailSender.setDefaultEncoding("UTF-8");
 
         Properties props = mailSender.getJavaMailProperties();

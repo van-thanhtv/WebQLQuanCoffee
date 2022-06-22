@@ -9,6 +9,8 @@ import org.springframework.stereotype.Indexed;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.sql.Date;
 
 
@@ -24,10 +26,12 @@ public class User {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    @NotBlank(message = "Can't be left blank name !")
     @Field
     @Column(name = "name", length = 100)
     private String name;
 
+    @NotBlank(message = "Can't be left blank phone !")
     @Field
     @Column(name = "phone", length = 15)
     private String phone;
@@ -35,6 +39,7 @@ public class User {
     @Column(name = "birthday")
     private Date birthday;
 
+    @NotBlank(message = "Can't be left blank address !")
     @Field
     @Column(name = "address", length = 100)
     private String address;
@@ -45,9 +50,12 @@ public class User {
     @Column(name = "image", length = 150)
     private String image;
 
+    @Email(message = "Your email is not valid !")
+    @NotBlank(message = "Can't be left blank email !")
     @Column(name = "email", nullable = false, length = 50)
     private String email;
 
+    @NotBlank(message = "Can't be left blank password !")
     @Column(name = "password", length = 200)
     private String password;
 

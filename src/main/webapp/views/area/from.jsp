@@ -104,17 +104,48 @@
                 </tbody>
             </table>
             <div class="clearfix">
-                <div class="hint-text">Showing <b>${list.numberOfElements}</b> out of <b>${list.totalElements}</b>
-                    entries
+                <div class="">
+                    <div class="w-100 text-center text-danger">${list.getNumber()+1}/${list.getTotalPages()}</div>
+
+                    <div class="">
+                        <div class="">Showing <b>${list.numberOfElements}</b> out of <b>${list.totalElements}</b>
+                            entries
+                        </div>
+                    </div>
                 </div>
-                <ul class="pagination">
-                    <li class="page-item"><a href="/area/index" class="page-link">First</a></li>
-                    <li class="page-item"><a href="/area/index?page=${list.number -1}">Previous</a></li>
-                    <li class="page-item"><a href="/area/index?page=${list.number +1}" class="page-link">Next</a>
-                    </li>
-                    <li class="page-item"><a href="/area/index?page=${list.totalPages -1}"
-                                             class="page-link">Last</a></li>
-                </ul>
+
+                <c:if test="${list.number-1>0}">
+                    <c:set var="number" scope="session" value="?page=${list.number -1}"></c:set>
+                </c:if>
+                <c:if test="${list.number-1<1}">
+                    <c:set var="number" scope="session" value=""></c:set>
+                </c:if>
+                <c:if test="${list.number+1>list.totalPages}">
+                    <c:set var="numberup" scope="session" value="?page=${list.totalPages}"></c:set>
+                </c:if>
+                <c:if test="${list.number+1<list.totalPages}">
+                    <c:set var="numberup" scope="session" value="?page=${list.number+1}"></c:set>
+                </c:if>
+
+                <nav class="pagination1-rounded pagination1 justify-content-end" aria-label="Page navigation example">
+                    <ul class="pagination1">
+                        <li class="page-item ${list.getNumber()==0?'disabled':''}">
+                            <a class="page-link" href="/area/index${number}" aria-label="Previous">
+                                <span aria-hidden="true">«</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <c:forEach var="i" begin="0" end="${ list.totalPages - 1 }">
+                        <li class="page-item"><a class="page-link" href="/area/index?page=${ i }">${ i + 1 }</a>
+                        </li>
+                        </c:forEach>
+                        <li class="page-item ${list.getNumber()==list.getTotalPages()-1?'disabled':''}">
+                            <a href="/area/index${numberup}" class="page-link" aria-label="Next">
+                                <span aria-hidden="true">»</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                </nav>
             </div>
         </div>
     </div>

@@ -9,14 +9,14 @@ import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Service
 public class UserService implements UserImpl {
     @Autowired
     private IUserRepository repository;

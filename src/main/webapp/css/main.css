@@ -6014,7 +6014,7 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
     color: #6c757d
 }
 
-.pagination {
+.pagination1 {
     display: flex;
     padding-left: 0;
     list-style: none;
@@ -6050,25 +6050,25 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
     cursor: pointer
 }
 
-.page-item:first-child .page-link, .pagination .page-number:first-child .page-link {
+.page-item:first-child .page-link, .pagination1 .page-number:first-child .page-link {
     margin-left: 0;
     border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem
 }
 
-.page-item:last-child .page-link, .pagination .page-number:last-child .page-link {
+.page-item:last-child .page-link, .pagination1 .page-number:last-child .page-link {
     border-top-right-radius: .25rem;
     border-bottom-right-radius: .25rem
 }
 
-.page-item.active .page-link, .pagination .active.page-number .page-link {
+.page-item.active .page-link, .pagination1 .active.page-number .page-link {
     z-index: 1;
     color: #fff;
     background-color: #3f6ad8;
     border-color: #007bff
 }
 
-.page-item.disabled .page-link, .pagination .disabled.page-number .page-link {
+.page-item.disabled .page-link, .pagination1 .disabled.page-number .page-link {
     color: #6c757d;
     pointer-events: none;
     cursor: auto;
@@ -6076,34 +6076,34 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
     border-color: #dee2e6
 }
 
-.pagination-lg .page-link {
+.pagination1-lg .page-link {
     padding: .75rem 1.5rem;
     font-size: 1.1rem;
     line-height: 1.5
 }
 
-.pagination-lg .page-item:first-child .page-link, .pagination-lg .pagination .page-number:first-child .page-link, .pagination .pagination-lg .page-number:first-child .page-link {
+.pagination1-lg .page-item:first-child .page-link, .pagination1-lg .pagination1 .page-number:first-child .page-link, .pagination1 .pagination1-lg .page-number:first-child .page-link {
     border-top-left-radius: .3rem;
     border-bottom-left-radius: .3rem
 }
 
-.pagination-lg .page-item:last-child .page-link, .pagination-lg .pagination .page-number:last-child .page-link, .pagination .pagination-lg .page-number:last-child .page-link {
+.pagination1-lg .page-item:last-child .page-link, .pagination1-lg .pagination1 .page-number:last-child .page-link, .pagination1 .pagination1-lg .page-number:last-child .page-link {
     border-top-right-radius: .3rem;
     border-bottom-right-radius: .3rem
 }
 
-.pagination-sm .page-link {
+.pagination1-sm .page-link {
     padding: .25rem .5rem;
     font-size: .968rem;
     line-height: 1.5
 }
 
-.pagination-sm .page-item:first-child .page-link, .pagination-sm .pagination .page-number:first-child .page-link, .pagination .pagination-sm .page-number:first-child .page-link {
+.pagination1-sm .page-item:first-child .page-link, .pagination1-sm .pagination1 .page-number:first-child .page-link, .pagination1 .pagination1-sm .page-number:first-child .page-link {
     border-top-left-radius: .2rem;
     border-bottom-left-radius: .2rem
 }
 
-.pagination-sm .page-item:last-child .page-link, .pagination-sm .pagination .page-number:last-child .page-link, .pagination .pagination-sm .page-number:last-child .page-link {
+.pagination1-sm .page-item:last-child .page-link, .pagination1-sm .pagination1 .page-number:last-child .page-link, .pagination1 .pagination1-sm .page-number:last-child .page-link {
     border-top-right-radius: .2rem;
     border-bottom-right-radius: .2rem
 }
@@ -19899,7 +19899,7 @@ legend {
     -moz-appearance: none
 }
 
-.pagination li a {
+.pagination1 li a {
     position: relative;
     display: block;
     padding: .5rem .75rem;
@@ -19910,7 +19910,7 @@ legend {
     border: 1px solid #dee2e6
 }
 
-.pagination li a:hover {
+.pagination1 li a:hover {
     z-index: 2;
     color: #0056b3;
     text-decoration: none;
@@ -19918,39 +19918,39 @@ legend {
     border-color: #dee2e6
 }
 
-.pagination li a:focus {
+.pagination1 li a:focus {
     z-index: 2;
     outline: 0;
     box-shadow: none
 }
 
-.pagination li a:not(:disabled):not(.disabled) {
+.pagination1 li a:not(:disabled):not(.disabled) {
     cursor: pointer
 }
 
-.pagination li:first-child a {
+.pagination1 li:first-child a {
     margin-left: 0;
     border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem
 }
 
-.pagination li:last-child a {
+.pagination1 li:last-child a {
     border-top-right-radius: .25rem;
     border-bottom-right-radius: .25rem
 }
 
-.pagination li.active a {
+.pagination1 li.active a {
     z-index: 1;
     color: #fff;
     background-color: #3f6ad8;
     border-color: #007bff
 }
 
-.pagination li.active a:hover {
+.pagination1 li.active a:hover {
     color: #fff
 }
 
-.pagination li.disabled a {
+.pagination1 li.disabled a {
     color: #6c757d;
     pointer-events: none;
     cursor: auto;
@@ -19958,7 +19958,7 @@ legend {
     border-color: #dee2e6
 }
 
-.pagination-rounded li a {
+.pagination1-rounded li a {
     border-radius: 50px !important;
     margin: 0 .3rem
 }
@@ -35907,7 +35907,7 @@ div.dataTables_wrapper div.dataTables_paginate {
     text-align: right
 }
 
-div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+div.dataTables_wrapper div.dataTables_paginate ul.pagination1 {
     margin: 2px 0;
     white-space: nowrap;
     justify-content: flex-end
@@ -36170,36 +36170,36 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
     text-align: center
 }
 
-.fixed-table-pagination div.pagination, .fixed-table-pagination .pagination-detail {
+.fixed-table-pagination1 div.pagination1, .fixed-table-pagination1 .pagination1-detail {
     margin-top: 10px;
     margin-bottom: 10px
 }
 
-.fixed-table-pagination div.pagination .pagination {
+.fixed-table-pagination1 div.pagination1 .pagination1 {
     margin: 0
 }
 
-.fixed-table-pagination .pagination a {
+.fixed-table-pagination1 .pagination1 a {
     padding: 6px 12px;
     line-height: 1.428571429
 }
 
-.fixed-table-pagination .pagination-info {
+.fixed-table-pagination1 .pagination1-info {
     line-height: 34px;
     margin-right: 5px
 }
 
-.fixed-table-pagination .btn-group {
+.fixed-table-pagination1 .btn-group {
     position: relative;
     display: inline-block;
     vertical-align: middle
 }
 
-.fixed-table-pagination .dropup .dropdown-menu {
+.fixed-table-pagination1 .dropup .dropdown-menu {
     margin-bottom: 0
 }
 
-.fixed-table-pagination .page-list {
+.fixed-table-pagination1 .page-list {
     display: inline-block
 }
 
@@ -36226,7 +36226,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
     line-height: 34px
 }
 
-.fixed-table-pagination li.disabled a {
+.fixed-table-pagination1 li.disabled a {
     pointer-events: none;
     cursor: default
 }
@@ -36323,7 +36323,7 @@ div.fixed-table-scroll-outer {
     overflow: hidden
 }
 
-.fixed-table-toolbar:after, .fixed-table-pagination:after {
+.fixed-table-toolbar:after, .fixed-table-pagination1:after {
     content: "";
     display: block;
     clear: both
@@ -41522,7 +41522,7 @@ span.multiselect-native-select select {
 }
 
 @media (max-width: 1199.98px) {
-    .-hide-paging .-pagination .-center {
+    .-hide-paging .-pagination1 .-center {
         display: none
     }
 }

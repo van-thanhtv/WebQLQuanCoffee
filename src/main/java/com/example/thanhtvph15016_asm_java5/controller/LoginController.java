@@ -112,7 +112,7 @@ public class LoginController {
         }else {
             userUpdate.setPassword(EncryptUtil.encrypt(passUp));
         }
-        sender.push(mailModel.getTo(),"Email to reset password","Your password is"+passUp+"\n" +
+        sender.push(mailModel.getTo(),"Email to reset password","Your password is :"+passUp+"\n" +
                 "Please do not give this password to anyone else");
         model.addAttribute("messgare","Mật khẩu của bạn được gưởi đi trong giây lát");
         return  "forgotPassword";

@@ -15,85 +15,99 @@
     <div class="main-card mb-3 card">
         <div class="card-body">
             <form:form action="${uri}" method="post" modelAttribute="user" enctype="multipart/form-data">
-            <div class="form-group mt-4">
-                <form:label class="card-title" path="name">Name</form:label>
-                <form:input name="name" path="name" type="tex" class="form-control" value="${u.name}"/>
+                <div class="form-group mt-4">
+                    <div>
+                        <form:label class="card-title" path="name">Name</form:label>
+                        <form:input name="name" path="name" type="tex" class="form-control" value="${u.name}"/>
+                        <form:errors path="name" class="text-danger"/>
+                    </div>
+                    <div>
+                        <form:label class="card-title pt-2" path="email">Email</form:label>
+                        <form:input name="email" path="email" type="tex" class="form-control"
+                                    disabled="${u.id!=null?'true':'false'}" value="${u.email}"/>
+                        <form:errors path="email" class="text-danger"/>
+                    </div>
 
-                <form:label class="card-title pt-2" path="email">Email</form:label>
-                <form:input name="email" path="email" type="tex" class="form-control" disabled="${u.id!=null?'true':'false'}"
-                            value="${u.email}"/>
-                <c:if test="${u.id==null}">
-                    <form:label class="card-title pt-2" path="password">Password</form:label>
-                    <form:input name="password" type="password" path="password" class="form-control"/>
-                </c:if>
-                <form:label class="card-title pt-2" path="phone">Phone</form:label>
-                <form:input name="phone" path="phone" type="tex" class="form-control" value="${u.phone}"/>
+                    <c:if test="${u.id==null}">
+                        <div>
+                            <form:label class="card-title pt-2" path="password">Password</form:label>
+                            <form:input name="password" type="password" path="password" class="form-control"/>
+                            <form:errors path="password" class="text-danger"/>
+                        </div>
+                    </c:if>
+                    <div>
+                        <form:label class="card-title pt-2" path="phone">Phone</form:label>
+                        <form:input name="phone" path="phone" type="tex" class="form-control" value="${u.phone}"/>
+                        <form:errors path="phone" class="text-danger"/>
+                    </div>
+                    <div>
+                        <form:label class="card-title pt-2" path="birthday">Birthday</form:label>
+                        <form:input path="birthday" type="date" class="form-control" value="${u.birthday}"/>
+                    </div>
+                    <div>
+                        <c:if test="${u.id!=null}">
+                            <form:label class="card-title pt-3" path="sex">Sex: </form:label>
+                            <form:radiobutton path="sex" style="width: 1%" checked="${u.sex==0?'checked':''}" name="sex"
+                                              value="0"/>
+                            <label>Nam</label>
+                            <form:radiobutton path="sex" style="width: 1%" checked="${u.sex==1?'checked':''}" name="sex"
+                                              value="1"/>
+                            <label>Nữ</label>
+                        </c:if>
+                        <c:if test="${u.id==null}">
+                            <form:label class="card-title pt-3" path="sex">Sex: </form:label>
+                            <form:radiobutton path="sex" style="width: 1%" checked="checked" name="sex" value="0"/>
+                            <label>Nam</label>
+                            <form:radiobutton path="sex" style="width: 1%" name="sex" value="1"/>
+                            <label>Nữ</label>
+                        </c:if>
 
-                <form:label class="card-title pt-2" path="birthday">Birthday</form:label>
-                <form:input path="birthday" type="date" class="form-control"
-                            value="${u.birthday}"/>
-                <div>
+                    </div>
+                    <div>
+                        <form:label class="card-title pt-1" path="address">Address</form:label>
+                        <form:input path="address" type="tex" name="address" class="form-control" value="${u.address}"/>
+                        <form:errors path="address" class="text-danger"/>
+                    </div>
                     <c:if test="${u.id!=null}">
-                        <form:label class="card-title pt-3" path="sex">Sex: </form:label>
-                        <form:radiobutton path="sex" style="width: 1%" checked="${u.sex==0?'checked':''}" name="sex"
+                        <form:label class="card-title pt-3" path="isAdmin">IsAdmin: </form:label>
+                        <form:radiobutton path="isAdmin" style="width: 1%" checked="${u.isAdmin==0?'checked':''}"
+                                          name="isAdmin"
                                           value="0"/>
-                        <label>Nam</label>
-                        <form:radiobutton path="sex" style="width: 1%" checked="${u.sex==1?'checked':''}" name="sex"
+                        <label>Admin</label>
+                        <form:radiobutton path="isAdmin" style="width: 1%" checked="${u.isAdmin==1?'checked':''}"
+                                          name="isAdmin"
                                           value="1"/>
-                        <label>Nữ</label>
+                        <label>Nhân Viên</label>
+                        <form:radiobutton path="isAdmin" style="width: 1%" checked="${u.isAdmin==2?'checked':''}"
+                                          name="isAdmin"
+                                          value="2"/>
+                        <label>Khách Hàng</label>
                     </c:if>
                     <c:if test="${u.id==null}">
-                        <form:label class="card-title pt-3" path="sex">Sex: </form:label>
-                        <form:radiobutton path="sex" style="width: 1%" checked="checked" name="sex" value="0"/>
-                        <label>Nam</label>
-                        <form:radiobutton path="sex" style="width: 1%" name="sex" value="1"/>
-                        <label>Nữ</label>
+                        <form:label class="card-title pt-3" path="isAdmin">IsAdmin: </form:label>
+                        <form:radiobutton path="isAdmin" style="width: 1%" checked="checked" name="isAdmin"
+                                          value="0"/>
+                        <label>Admin</label>
+                        <form:radiobutton path="isAdmin" style="width: 1%" name="isAdmin"
+                                          value="1"/>
+                        <label>Nhân Viên</label>
+                        <form:radiobutton path="isAdmin" style="width: 1%" name="isAdmin"
+                                          value="2"/>
+                        <label>Khách Hàng</label>
                     </c:if>
-
+                    <br>
+                    <form:label class="card-title pt-1" path="image">Image</form:label>
+                    <input name="img" type="file" class="form-control-file"/>
+                    <br>
+                    <c:if test="${u.id==null}">
+                        <button class="btn btn-success mt-2">Create</button>
+                        <button type="reset" class="btn btn-primary mt-2">Clear</button>
+                    </c:if>
+                    <c:if test="${u.id!=null}">
+                        <button class="btn btn-success mt-2 block-page-btn-example-3">Update</button>
+                        <a href="/user/index" class="btn btn-primary mt-2">Add New User</a>
+                    </c:if>
                 </div>
-
-                <form:label class="card-title pt-1" path="address">Address</form:label>
-                <form:input path="address" type="tex" name="address" class="form-control" value="${u.address}"/>
-                <c:if test="${u.id!=null}">
-                    <form:label class="card-title pt-3" path="isAdmin">IsAdmin: </form:label>
-                    <form:radiobutton path="isAdmin" style="width: 1%" checked="${u.isAdmin==0?'checked':''}"
-                                      name="isAdmin"
-                                      value="0"/>
-                    <label>Admin</label>
-                    <form:radiobutton path="isAdmin" style="width: 1%" checked="${u.isAdmin==1?'checked':''}"
-                                      name="isAdmin"
-                                      value="1"/>
-                    <label>Nhân Viên</label>
-                    <form:radiobutton path="isAdmin" style="width: 1%" checked="${u.isAdmin==2?'checked':''}"
-                                      name="isAdmin"
-                                      value="2"/>
-                    <label>Khách Hàng</label>
-                </c:if>
-                <c:if test="${u.id==null}">
-                    <form:label class="card-title pt-3" path="isAdmin">IsAdmin: </form:label>
-                    <form:radiobutton path="isAdmin" style="width: 1%" checked="checked" name="isAdmin"
-                                      value="0"/>
-                    <label>Admin</label>
-                    <form:radiobutton path="isAdmin" style="width: 1%" name="isAdmin"
-                                      value="1"/>
-                    <label>Nhân Viên</label>
-                    <form:radiobutton path="isAdmin" style="width: 1%" name="isAdmin"
-                                      value="2"/>
-                    <label>Khách Hàng</label>
-                </c:if>
-                <br>
-                <form:label class="card-title pt-1" path="image">Image</form:label>
-                <input name="img" type="file" class="form-control-file"/>
-                <br>
-                <c:if test="${u.id==null}">
-                    <button class="btn btn-success mt-2">Create</button>
-                    <button type="reset" class="btn btn-primary mt-2">Clear</button>
-                </c:if>
-                <c:if test="${u.id!=null}">
-                    <button class="btn btn-success mt-2 block-page-btn-example-3">Update</button>
-                    <a href="/user/index" class="btn btn-primary mt-2">Add New User</a>
-                </c:if>
-            </div>
             </form:form>
         </div>
     </div>
@@ -209,20 +223,52 @@
                 </tbody>
             </table>
             <div class="clearfix">
-                <div class="hint-text">Showing <b>${list.numberOfElements}</b> out of <b>${list.totalElements}</b>
-                    entries
+                <div class="">
+                    <div class="w-100 text-center text-danger">${list.getNumber()+1}/${list.getTotalPages()}</div>
+
+                    <div class="">
+                        <div class="">Showing <b>${list.numberOfElements}</b> out of <b>${list.totalElements}</b>
+                            entries
+                        </div>
+                    </div>
                 </div>
-                <ul class="pagination">
-                    <li class="page-item"><a href="/user/index" class="page-link">First</a></li>
-                    <li class="page-item"><a href="/user/index?page=${list.number -1}">Previous</a></li>
-                    <li class="page-item"><a href="/user/index?page=${list.number +1}" class="page-link">Next</a>
-                    </li>
-                    <li class="page-item"><a href="/user/index?page=${list.totalPages -1}"
-                                             class="page-link">Last</a></li>
-                </ul>
+
+                    <c:if test="${list.number-1>0}">
+                        <c:set var="number" scope="session" value="?page=${list.number -1}"></c:set>
+                    </c:if>
+                    <c:if test="${list.number-1<1}">
+                        <c:set var="number" scope="session" value=""></c:set>
+                    </c:if>
+                    <c:if test="${list.number+1>list.totalPages}">
+                        <c:set var="numberup" scope="session" value="?page=${list.totalPages}"></c:set>
+                    </c:if>
+                    <c:if test="${list.number+1<list.totalPages}">
+                        <c:set var="numberup" scope="session" value="?page=${list.number+1}"></c:set>
+                    </c:if>
+
+                    <nav class="pagination1-rounded pagination1 justify-content-end" aria-label="Page navigation example">
+                        <ul class="pagination1">
+                            <li class="page-item ${list.getNumber()==0?'disabled':''}">
+                                <a class="page-link" href="/user/index${number}" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <c:forEach var="i" begin="0" end="${ list.totalPages - 1 }">
+                                <li class="page-item"><a class="page-link" href="/user/index?page=${ i }">${ i + 1 }</a>
+                                </li>
+                            </c:forEach>
+                            <li class="page-item ${list.getNumber()==list.getTotalPages()-1?'disabled':''}">
+                                <a href="/user/index${numberup}" class="page-link" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                    </nav>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script type="text/javascript">
